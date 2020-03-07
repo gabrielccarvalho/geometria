@@ -15,3 +15,10 @@ $ git clone https://github.com/gabrielccarvalho/geometria && cd geometria
 ```bash
   $ ./geometria
 ```
+
+## Screenshots
+
+### Tela de ajuda
+<p align="center">
+  <img src="https://i.imgur.com/I6EU2l7.png">
+</p>
