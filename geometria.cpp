@@ -127,6 +127,22 @@ void espacial(int argc, char* argv[]) {
     // Printando informações na tela.
     std::cout << "# Área do paralelepípedo: " << area << std::endl;
     std::cout << "# Volume do paralelepípedo: " << volume << std::endl;
+  } else if (forma == "esfera") {
+    // Caso a figura seja uma esfera, utilizaremos os argumentos como sendo
+    // seu raio.
+    int raio = atoi(argv[2]);
+
+    // Calculando a área da esfera.
+    float area;
+    area = 4 * M_PI * pow(raio, 2.0f);
+
+    // Calculando o volume da esfera.
+    float volume; 
+    volume = 4/3 * M_PI * pow(raio, 3.0f);
+
+    // Printando informações na tela.
+    std::cout << "# Área da esfera: " << area << std::endl;
+    std::cout << "# Volume da esfera: " << volume << std::endl;
   }
 }
 
