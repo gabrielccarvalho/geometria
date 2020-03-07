@@ -35,11 +35,15 @@ void plano(int argc, char* argv[]) {
 
     // Calculando o perímetro do triângulo.
     int perimetro;
-    perimetro = (lado1 + lado2 + lado3) / 2;
+    perimetro = (lado1 + lado2 + lado3);
     
     // Utilizando a fórmula de Heron para calcular a área do triângulo.
+    // para essa fórmula utilizaremos a metade do perímetro.
+    int p;
+    p = (lado1 + lado2 + lado3) / 2;
+
     float area;
-    area = sqrt(perimetro * (perimetro - lado1) * (perimetro - lado2) * (perimetro - lado3));
+    area = sqrt(p * (p - lado1) * (p - lado2) * (p - lado3));
 
     // Printando informações em tela.
     std::cout << "# Área do triângulo: " << area << std::endl;
@@ -86,13 +90,94 @@ void espacial(int argc, char* argv[]) {
   std::string forma = argv[1];
 
   if (forma == "piramide") { // TODO
+    // Caso a figura seja uma esfera, utilizaremos os argumentos como sendo
+    // sua base, os requisitos dependendo da sua base e sua altura.
+    std::string base = argv[2];
 
-    float area = 0;
-    float volume = 0;
+    if (base == "quadrangular") {
+      // Caso a base seja quadrângular, utilizaremos os argumentos como sendo
+      // o lado da base e a altura da pirâmide.
+      int lado = atoi(argv[3]);
+      int altura = atoi(argv[4]);
 
-    // Printando informações na tela.
-    std::cout << "# Área da pirâmide: " << area << std::endl;
-    std::cout << "# Volume da pirâmide: " << volume << std::endl;
+      // Calculando a área da base
+      int area_base;
+      area_base = pow(lado, 2.0f);
+
+      // Calculando a área lateral
+      int area_lateral;
+      area_lateral = (((lado * altura) / 2) * 4);
+
+      // Calculando a área da pirâmide
+      float area;
+      area = area_base + area_lateral;
+
+      // Calculando o volume da pirâmide
+      float volume;
+      volume = (area_base * altura) / 3;
+
+      // Printando informações na tela.
+      std::cout << "# Área da pirâmide: " << area << std::endl;
+      std::cout << "# Volume da pirâmide: " << volume << std::endl;
+    } else if (base == "triangular") {
+      // Caso a base seja triângular, utilizaremos os argumentos como sendo
+      // os lados da base e a altura da pirâmide.
+      int lado1 = atoi(argv[3]);
+      int lado2 = atoi (argv[4]);
+      int lado3 = atoi (argv[5]);
+      int altura = atoi(argv[6]);
+
+      // Utilizando a fórmula de Heron para calcular a área do triângulo.
+      // para essa fórmula utilizaremos a metade do perímetro.
+      int p;
+      p = (lado1 + lado2 + lado3) / 2;
+
+      // Calculando a área da base
+      int area_base;
+      area_base = sqrt(p * (p - lado1) * (p - lado2) * (p - lado3));
+
+      // Calculando a área lateral
+      int area_lateral;
+      area_lateral = ((lado1 * altura) / 2) + ((lado2 * altura) / 2) + ((lado3 * altura) / 2);
+
+      // Calculando a área da pirâmide
+      float area;
+      area = area_base + area_lateral;
+
+      // Calculando o volume da pirâmide
+      float volume;
+      volume = (area_base * altura) / 3;
+
+      // Printando informações na tela.
+      std::cout << "# Área da pirâmide: " << area << std::endl;
+      std::cout << "# Volume da pirâmide: " << volume << std::endl;
+    } else if (base == "retangular") {
+      // Caso a base seja retangular, utilizaremos os argumentos como sendo
+      // os lados da base e a altura da pirâmide.
+      int lado1 = atoi(argv[3]);
+      int lado2 = atoi(argv[4]);
+      int altura = atoi(argv[5]);
+
+      // Calculando a área da base
+      int area_base;
+      area_base = lado1 * lado2;
+
+      // Calculando a área lateral
+      int area_lateral;
+      area_lateral = (((lado1 * altura) / 2) * 2) + (((lado2 * altura) / 2) * 2);
+
+      // Calculando a área da pirâmide
+      float area;
+      area = area_base + area_lateral;
+
+      // Calculando o volume da pirâmide
+      float volume;
+      volume = (area_base * altura) / 3;
+
+      // Printando informações na tela.
+      std::cout << "# Área da pirâmide: " << area << std::endl;
+      std::cout << "# Volume da pirâmide: " << volume << std::endl;
+    }
   } else if (forma == "cubo") { // Caso a forma informada seja um cubo.
     // Caso a figura seja um cubo, utilizaremos os argumentos como sendo
     // sua aresta.
@@ -138,7 +223,7 @@ void espacial(int argc, char* argv[]) {
 
     // Calculando o volume da esfera.
     float volume; 
-    volume = 4/3 * M_PI * pow(raio, 3.0f);
+    volume = (4 * M_PI * pow(raio, 3.0f)) / 3;
 
     // Printando informações na tela.
     std::cout << "# Área da esfera: " << area << std::endl;
