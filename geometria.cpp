@@ -85,7 +85,7 @@ void plano(int argc, char* argv[]) {
 void espacial(int argc, char* argv[]) {
   std::string forma = argv[1];
 
-  if (forma == "piramide") {
+  if (forma == "piramide") { // TODO
 
     float area = 0;
     float volume = 0;
@@ -94,7 +94,8 @@ void espacial(int argc, char* argv[]) {
     std::cout << "# Área da pirâmide: " << area << std::endl;
     std::cout << "# Volume da pirâmide: " << volume << std::endl;
   } else if (forma == "cubo") { // Caso a forma informada seja um cubo.
-
+    // Caso a figura seja um cubo, utilizaremos os argumentos como sendo
+    // sua aresta.
     int aresta = atoi(argv[2]);
 
     // Calculando a área do cubo.
@@ -105,10 +106,27 @@ void espacial(int argc, char* argv[]) {
     float volume; 
     volume = pow(aresta, 3.0f);
 
-
     // Printando informacoes
     std::cout << "# Área do cubo: " << area << std::endl;
     std::cout << "# Volume do cubo: " << volume << std::endl;
+  } else if (forma == "paralelepipedo") {
+    // Caso a figura seja um paralelepípedo, utilizaremos os argumentos como sendo
+    // suas arestas.
+    int aresta1 = atoi(argv[2]);
+    int aresta2 = atoi(argv[3]);
+    int aresta3 = atoi(argv[4]);
+
+    // Calculando a área do paralelepípedo.
+    float area;
+    area = (2 * aresta1 * aresta2) + (2 * aresta1 * aresta3) + (2 * aresta2 * aresta3);
+
+    // Calculando o volume do paralelepípedo.
+    float volume; 
+    volume = (aresta1 * aresta2 * aresta3);
+
+    // Printando informações na tela.
+    std::cout << "# Área do paralelepípedo: " << area << std::endl;
+    std::cout << "# Volume do paralelepípedo: " << volume << std::endl;
   }
 }
 
