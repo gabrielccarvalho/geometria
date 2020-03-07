@@ -90,9 +90,25 @@ void espacial(int argc, char* argv[]) {
     float area = 0;
     float volume = 0;
 
-    // Printando informacoes
+    // Printando informações na tela.
     std::cout << "# Área da pirâmide: " << area << std::endl;
     std::cout << "# Volume da pirâmide: " << volume << std::endl;
+  } else if (forma == "cubo") { // Caso a forma informada seja um cubo.
+
+    int aresta = atoi(argv[2]);
+
+    // Calculando a área do cubo.
+    float area;
+    area = 6 * pow(aresta, 2.0f);
+
+    // Calculando o volume do cubo.
+    float volume; 
+    volume = pow(aresta, 3.0f);
+
+
+    // Printando informacoes
+    std::cout << "# Área do cubo: " << area << std::endl;
+    std::cout << "# Volume do cubo: " << volume << std::endl;
   }
 }
 
