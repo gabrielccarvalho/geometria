@@ -86,9 +86,13 @@ void plano(int argc, char* argv[]) {
   }
 }
 
+// Função para calcular área e volume de figuras espaciais.
 void espacial(int argc, char* argv[]) {
+  // Definindo o primeiro parâmetro, onde será passada a forma geométrica a ser
+  // trabalhada, como uma string.
   std::string forma = argv[1];
 
+  // Analisando a forma informada e decidindo as operações a serem utilizadas.
   if (forma == "piramide") { // TODO
     // Caso a figura seja uma esfera, utilizaremos os argumentos como sendo
     // sua base, os requisitos dependendo da sua base e sua altura.
@@ -270,5 +274,6 @@ int main(int argc, char* argv[]) {
   } else {
     espacial(argc, argv);
   }
+  // Retorno padrão
   return 0;
 }
