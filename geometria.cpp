@@ -56,8 +56,16 @@ void plano(int argc, char* argv[]) {
       area = sqrt(p * (p - lado1) * (p - lado2) * (p - lado3));
 
       // Printando informações em tela.
-      std::cout << "# Área do triângulo: " << area << std::endl;
-      std::cout << "# Perímetro do triângulo: " << perimetro << std::endl;
+      // Verificando se o Triângulo existe.
+      // Caso o triângulo não exista, sua área será do tipo NaN, isto é, Not a Number
+      // e para capturar esse erro, verificaremos se area != area, pois só será true para
+      // variáveis do tipo NaN.
+      if (area != area) {
+        std::cout << "# O triângulo informado não existe." << std::endl;
+      } else {
+        std::cout << "# Área do triângulo: " << area << std::endl;
+        std::cout << "# Perímetro do triângulo: " << perimetro << std::endl;
+      }
     }
   } else if (forma == "quadrado") { // Caso a forma informada seja um Quadrado.
     // Lidando com possíveis erros.
@@ -166,24 +174,32 @@ void espacial(int argc, char* argv[]) {
         p = (lado1 + lado2 + lado3) / 2;
 
         // Calculando a área da base
-        int area_base;
+        float area_base;
         area_base = sqrt(p * (p - lado1) * (p - lado2) * (p - lado3));
 
-        // Calculando a área lateral
-        int area_lateral;
-        area_lateral = ((lado1 * altura) / 2) + ((lado2 * altura) / 2) + ((lado3 * altura) / 2);
+        // Verificando se o Triângulo existe.
+        // Caso o triângulo não exista, sua área será do tipo NaN, isto é, Not a Number
+        // e para capturar esse erro, verificaremos se area != area, pois só será true para
+        // variáveis do tipo NaN.
+        if (area_base != area_base) {
+          std::cout << "# O triângulo informado para a base não existe, portanto a pirâmide também não." << std::endl;
+        } else {
+          // Calculando a área lateral
+          int area_lateral;
+          area_lateral = ((lado1 * altura) / 2) + ((lado2 * altura) / 2) + ((lado3 * altura) / 2);
 
-        // Calculando a área da pirâmide
-        float area;
-        area = area_base + area_lateral;
+          // Calculando a área da pirâmide
+          float area;
+          area = area_base + area_lateral;
 
-        // Calculando o volume da pirâmide
-        float volume;
-        volume = (area_base * altura) / 3;
+          // Calculando o volume da pirâmide
+          float volume;
+          volume = (area_base * altura) / 3;
 
-        // Printando informações na tela.
-        std::cout << "# Área da pirâmide: " << area << std::endl;
-        std::cout << "# Volume da pirâmide: " << volume << std::endl;
+          // Printando informações na tela.
+          std::cout << "# Área da pirâmide: " << area << std::endl;
+          std::cout << "# Volume da pirâmide: " << volume << std::endl;
+        }
       }
     } else if (base == "retangular") {
       // Lidando com possíveis erros.
@@ -293,7 +309,7 @@ int main(int argc, char* argv[]) {
   // Printando as instruções do programa
   // caso o mesmo seja chamado sem argumentos.
   if (argc == 1) {
-    std::cout << "Por favor, especifique a opção desejada e seus respectivos parametros." << std::endl;
+    std::cout << "Por favor, especifique a opção desejada e seus respectivos parametros:" << std::endl;
     std::cout << std::endl;
     std::cout << "1) Figuras planas: " << std::endl;
     std::cout << "    i. Retângulo: base e altura." << std::endl;
@@ -324,8 +340,10 @@ int main(int argc, char* argv[]) {
   // Descobrindo se a figura informada é plana ou espacial
   // e separando-as em funções.
   if (forma == "retangulo" || forma == "triangulo" || forma == "quadrado" || forma == "circulo") {
+    // Caso seja uma figura plana, chamaremos a função plana().
     plano(argc, argv);
   } else {
+    // Caso seja uma figura espacial, chamaremos a função espacial().
     espacial(argc, argv);
   }
   // Retorno padrão
