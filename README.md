@@ -11,7 +11,11 @@
 ```bash
 $ git clone https://github.com/gabrielccarvalho/geometria && cd geometria
 ```
-2) Execute o programa para saber como utiliza-lo
+2) Compile o programa
+```bash
+$ g++ -o geometria geometria.cpp
+```
+3) Execute o programa para saber como utiliza-lo
 ```bash
   $ ./geometria
 ```
