@@ -20,6 +20,10 @@ $ g++ -o geometria src/main.cpp src/lib/geometria.cpp
   $ ./geometria
 ```
 
+## Tecnologias usadas:
+
+- C++.
+
 ## Screenshots
 
 ### Tela de Menu
