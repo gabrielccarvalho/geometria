@@ -17,18 +17,18 @@ void plano(int argc, char* argv[]) {
     } else {
       // Caso a figura seja um retângulo, utilizaremos os argumentos como sendo
       // base e altura.
-      int base = atoi(argv[2]);
-      int altura = atoi(argv[3]);
+      float base = atof(argv[2]);
+      float altura = atof(argv[3]);
       
       // Calculando o perímetro do retângulo.
-      int perimetro;
+      float perimetro;
       perimetro = 2 * (base + altura);
 
       // Calculando a área do retângulo.
       float area;
       area = (base * altura);
 
-      // Printando informações em tela.
+      // Prfloatando informações em tela.
       std::cout << "# Área do retângulo: " << area << std::endl;
       std::cout << "# Perímetro do retângulo: " << perimetro << std::endl;
     }
@@ -40,23 +40,23 @@ void plano(int argc, char* argv[]) {
     } else {
       // Caso a figura seja um retângulo, utilizaremos os argumentos como sendo
       // os 3 lados do mesmo.
-      int lado1 = atoi(argv[2]);
-      int lado2 = atoi(argv[3]);
-      int lado3 = atoi(argv[4]);
+      float lado1 = atof(argv[2]);
+      float lado2 = atof(argv[3]);
+      float lado3 = atof(argv[4]);
 
       // Calculando o perímetro do triângulo.
-      int perimetro;
+      float perimetro;
       perimetro = (lado1 + lado2 + lado3);
       
       // Utilizando a fórmula de Heron para calcular a área do triângulo.
       // para essa fórmula utilizaremos a metade do perímetro.
-      int p;
+      float p;
       p = (lado1 + lado2 + lado3) / 2;
 
       float area;
       area = sqrt(p * (p - lado1) * (p - lado2) * (p - lado3));
 
-      // Printando informações em tela.
+      // Prfloatando informações em tela.
       // Verificando se o Triângulo existe.
       // Caso o triângulo não exista, sua área será do tipo NaN, isto é, Not a Number
       // e para capturar esse erro, verificaremos se area != area, pois só será true para
@@ -76,17 +76,17 @@ void plano(int argc, char* argv[]) {
     } else {
       // Caso a figura seja um quadrado, utilizaremos os argumentos como sendo
       // o lado.
-      int lado = atoi(argv[2]);
+      float lado = atof(argv[2]);
 
       // Calculando o perímetro do quadrado.
-      int perimetro;
+      float perimetro;
       perimetro = 4 * lado;
 
       // Calculando a área do quadrado.
       float area;
       area = pow(lado, 2.0f);
 
-      // Printando informações na tela.
+      // Prfloatando informações na tela.
       std::cout << "# Área do quadrado: " << area << std::endl;
       std::cout << "# Perímetro do quadrado: " << perimetro << std::endl;
     }
@@ -98,17 +98,17 @@ void plano(int argc, char* argv[]) {
     } else {
       // Caso a figura seja um retângulo, utilizaremos os argumentos como sendo
       // seu raio.
-      int raio = atoi(argv[2]);
+      float raio = atof(argv[2]);
 
       // Calculando o perímetro do círculo.
-      int perimetro;
+      float perimetro;
       perimetro = 2 * M_PI * raio;
 
       // Calculando a área do círculo.
       float area;
       area = M_PI * pow(raio, 2.0f);
 
-      // Printando informações na tela.
+      // Prfloatando informações na tela.
       std::cout << "# Área do circulo: " << area << std::endl;
       std::cout << "# Perímetro do circulo: " << perimetro << std::endl;
     }
@@ -133,15 +133,15 @@ void espacial(int argc, char* argv[]) {
       } else {
         // Caso a base seja quadrângular, utilizaremos os argumentos como sendo
         // o lado da base e a altura da pirâmide.
-        int lado = atoi(argv[3]);
-        int altura = atoi(argv[4]);
+        float lado = atof(argv[3]);
+        float altura = atof(argv[4]);
 
         // Calculando a área da base
-        int area_base;
+        float area_base;
         area_base = pow(lado, 2.0f);
 
         // Calculando a área lateral
-        int area_lateral;
+        float area_lateral;
         area_lateral = (((lado * altura) / 2) * 4);
 
         // Calculando a área da pirâmide
@@ -152,7 +152,7 @@ void espacial(int argc, char* argv[]) {
         float volume;
         volume = (area_base * altura) / 3;
 
-        // Printando informações na tela.
+        // Prfloatando informações na tela.
         std::cout << "# Área da pirâmide: " << area << std::endl;
         std::cout << "# Volume da pirâmide: " << volume << std::endl;
       }
@@ -164,14 +164,14 @@ void espacial(int argc, char* argv[]) {
       } else {
         // Caso a base seja triângular, utilizaremos os argumentos como sendo
         // os lados da base e a altura da pirâmide.
-        int lado1 = atoi(argv[3]);
-        int lado2 = atoi (argv[4]);
-        int lado3 = atoi (argv[5]);
-        int altura = atoi(argv[6]);
+        float lado1 = atof(argv[3]);
+        float lado2 = atof (argv[4]);
+        float lado3 = atof (argv[5]);
+        float altura = atof(argv[6]);
 
         // Utilizando a fórmula de Heron para calcular a área do triângulo.
         // para essa fórmula utilizaremos a metade do perímetro.
-        int p;
+        float p;
         p = (lado1 + lado2 + lado3) / 2;
 
         // Calculando a área da base
@@ -186,7 +186,7 @@ void espacial(int argc, char* argv[]) {
           std::cout << "# O triângulo informado para a base não existe, portanto a pirâmide também não." << std::endl;
         } else {
           // Calculando a área lateral
-          int area_lateral;
+          float area_lateral;
           area_lateral = ((lado1 * altura) / 2) + ((lado2 * altura) / 2) + ((lado3 * altura) / 2);
 
           // Calculando a área da pirâmide
@@ -197,7 +197,7 @@ void espacial(int argc, char* argv[]) {
           float volume;
           volume = (area_base * altura) / 3;
 
-          // Printando informações na tela.
+          // Prfloatando informações na tela.
           std::cout << "# Área da pirâmide: " << area << std::endl;
           std::cout << "# Volume da pirâmide: " << volume << std::endl;
         }
@@ -210,16 +210,16 @@ void espacial(int argc, char* argv[]) {
       } else {
         // Caso a base seja retangular, utilizaremos os argumentos como sendo
         // os lados da base e a altura da pirâmide.
-        int lado1 = atoi(argv[3]);
-        int lado2 = atoi(argv[4]);
-        int altura = atoi(argv[5]);
+        float lado1 = atof(argv[3]);
+        float lado2 = atof(argv[4]);
+        float altura = atof(argv[5]);
 
         // Calculando a área da base
-        int area_base;
+        float area_base;
         area_base = lado1 * lado2;
 
         // Calculando a área lateral
-        int area_lateral;
+        float area_lateral;
         area_lateral = (((lado1 * altura) / 2) * 2) + (((lado2 * altura) / 2) * 2);
 
         // Calculando a área da pirâmide
@@ -230,7 +230,7 @@ void espacial(int argc, char* argv[]) {
         float volume;
         volume = (area_base * altura) / 3;
 
-        // Printando informações na tela.
+        // Prfloatando informações na tela.
         std::cout << "# Área da pirâmide: " << area << std::endl;
         std::cout << "# Volume da pirâmide: " << volume << std::endl;
       }
@@ -243,7 +243,7 @@ void espacial(int argc, char* argv[]) {
     } else {
       // Caso a figura seja um cubo, utilizaremos os argumentos como sendo
       // sua aresta.
-      int aresta = atoi(argv[2]);
+      float aresta = atof(argv[2]);
 
       // Calculando a área do cubo.
       float area;
@@ -253,7 +253,7 @@ void espacial(int argc, char* argv[]) {
       float volume; 
       volume = pow(aresta, 3.0f);
 
-      // Printando informacoes
+      // Prfloatando informacoes
       std::cout << "# Área do cubo: " << area << std::endl;
       std::cout << "# Volume do cubo: " << volume << std::endl;
     }
@@ -265,9 +265,9 @@ void espacial(int argc, char* argv[]) {
     } else {
       // Caso a figura seja um paralelepípedo, utilizaremos os argumentos como sendo
       // suas arestas.
-      int aresta1 = atoi(argv[2]);
-      int aresta2 = atoi(argv[3]);
-      int aresta3 = atoi(argv[4]);
+      float aresta1 = atof(argv[2]);
+      float aresta2 = atof(argv[3]);
+      float aresta3 = atof(argv[4]);
 
       // Calculando a área do paralelepípedo.
       float area;
@@ -277,7 +277,7 @@ void espacial(int argc, char* argv[]) {
       float volume; 
       volume = (aresta1 * aresta2 * aresta3);
 
-      // Printando informações na tela.
+      // Prfloatando informações na tela.
       std::cout << "# Área do paralelepípedo: " << area << std::endl;
       std::cout << "# Volume do paralelepípedo: " << volume << std::endl;
     }
@@ -289,7 +289,7 @@ void espacial(int argc, char* argv[]) {
     } else {
       // Caso a figura seja uma esfera, utilizaremos os argumentos como sendo
       // seu raio.
-      int raio = atoi(argv[2]);
+      float raio = atof(argv[2]);
 
       // Calculando a área da esfera.
       float area;
@@ -299,7 +299,7 @@ void espacial(int argc, char* argv[]) {
       float volume; 
       volume = (4 * M_PI * pow(raio, 3.0f)) / 3;
 
-      // Printando informações na tela.
+      // Prfloatando informações na tela.
       std::cout << "# Área da esfera: " << area << std::endl;
       std::cout << "# Volume da esfera: " << volume << std::endl;
     }
