@@ -22,7 +22,7 @@ $ g++ -o geometria src/main.cpp src/lib/geometria.cpp
 
 ## Screenshots
 
-### Tela de ajuda
+### Tela de Menu
 <p align="center">
-  <img src="https://i.imgur.com/I6EU2l7.png">
+  <img src="https://i.imgur.com/liY3lcb.png">
 </p>
