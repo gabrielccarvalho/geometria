@@ -13,7 +13,7 @@ $ git clone https://github.com/gabrielccarvalho/geometria && cd geometria
 ```
 2) Compile o programa
 ```bash
-$ g++ -o geometria main.cpp geometria.cpp
+$ g++ -o geometria src/main.cpp src/lib/geometria.cpp
 ```
 3) Execute o programa para saber como utiliza-lo
 ```bash

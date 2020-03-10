@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "geometria.h"
+#include "./lib/geometria.h"
 
 int main(int argc, char* argv[]) {
   // Printando as instruções do programa
